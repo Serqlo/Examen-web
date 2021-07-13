@@ -1,0 +1,7 @@
+<div class="content">
+    <div fxLayout="row wrap">
+        <div fxFlex="25%" *ngFor="let libro of libros; index as i">
+            <app-libro   [routerLink]="['i']"  [nombre]="libro.Nombre" [imagen]="libro.Imagen" [autor]="libro.Autor" [paginas]="libro.Paginas"></app-libro>
+        </div>
+    </div>
+</div>

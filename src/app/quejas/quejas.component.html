@@ -1,0 +1,23 @@
+<form  autocomplete="off" id="formulario" #noteForm="ngForm" (ngSubmit)="onSubmit(noteForm)">
+    <li style="width:100%">
+        <ul>Nombre Completo
+            <input name="Nombre" [ngModel]="queja.Nombre" required>
+        </ul>
+        <ul>
+            <label for="Pais">Pais:</label>
+            <select class="form-control" id="Pais" [ngModel]="queja.Pais" name="Pais">
+                <option>Chile</option>
+                <option>Argentina</option>
+                <option>Bolivia</option>
+                <option>Brazil</option>
+                <option>Paraguay</option>
+            </select>
+        </ul>
+        <ul>
+            <label for="Observacion">Observacion</label>
+            <textarea class="form-control" id="Observacion" rows="3" [ngModel]="queja.Observacion" name="Observacion"></textarea>
+        </ul>
+    <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+    </ngb-alert>
+    <button mat-raised-button type="enviar">enviar</button>
+</form>
